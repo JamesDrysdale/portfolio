@@ -1,3 +1,101 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    /* mobile defaults */
+    @apply text-black200;
+    @apply dark:text-white900;
+    @apply font-bold;
+    @apply text-5xl;
+    @apply leading-loose115;
+    @apply tracking-tight;
+    /* desktop overrides */
+    @apply lg:text-6xl;
+    @apply lg:leading-loose130;
+    @apply lg:tracking-tighter;
+  }
+
+  h2 {
+    /* mobile defaults */
+    @apply text-black200;
+    @apply dark:text-white900;
+    @apply font-bold;
+    @apply text-2xl;
+    @apply leading-loose115;
+    @apply tracking-tight;
+    /* desktop overrides */
+    @apply lg:text-3xl;
+    @apply lg:tracking-tighter;
+  }
+
+  h3 {
+    /* mobile defaults */
+    @apply text-black200;
+    @apply dark:text-white900;
+    @apply font-semibold;
+    @apply text-xl;
+    @apply leading-loose105;
+    @apply tracking-tight;
+    /* desktop overrides */
+    @apply lg:text-2xl;
+    @apply lg:tracking-tighter;
+  }
+
+  p {
+    /* mobile defaults */
+    @apply text-black200;
+    @apply dark:text-white900;
+    @apply font-normal;
+    @apply text-lg;
+    /* desktop overrides */
+    @apply lg:text-xl;
+  }
+}
+
+@layer utilities {
+  .text-base {
+    /* mobile defaults */
+    @apply text-black200;
+    @apply dark:text-white900;
+    @apply font-normal;
+    @apply text-xl;
+    @apply leading-loose130;
+    /* desktop overrides */
+    @apply lg:text-2xl;
+  }
+
+  .text-body {
+    /* mobile defaults */
+    @apply text-black200;
+    @apply dark:text-white900;
+    @apply font-normal;
+    @apply text-base;
+    @apply leading-loose155;
+    /* desktop overrides */
+    @apply lg:text-lg;
+    @apply lg:leading-loose160;
+  }
+
+  .text-small {
+    /* mobile defaults */
+    @apply text-black200;
+    @apply dark:text-white900;
+    @apply font-normal;
+    @apply text-xs;
+    @apply leading-loose155;
+    /* desktop overrides */
+    @apply lg:text-sm;
+  }
+}
+
+/* @layer components {
+  .my-button {
+    @apply text-sm;
+    @apply font-thin;
+
+    @apply lg:text-sm;
+    @apply lg:font-normal;
+  }
+} */
