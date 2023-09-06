@@ -19,6 +19,13 @@ const config: Config = {
         white800: '#F3F8FF',
         white900: '#FFFFFF',
       },
+      lineHeight: {
+        loose105: '105%',
+        loose115: '115%',
+        loose130: '130%',
+        loose155: '155%',
+        loose160: '160%',
+      },
     },
   },
   plugins: [],
