@@ -30,11 +30,12 @@ const MobileNavBar: FC<MobileNavBarProps> = ({
   setShowMobileNav,
 }) => {
   return (
+    //   fixed top-0 mx-2 flex h-full w-screen flex-col gap-3 bg-white800 px-4 dark:bg-black300
     <div
-      className='mx-2 flex h-full w-full flex-col gap-3 bg-white800 p-4 dark:bg-black300'
+      className='fixed top-0 flex h-full w-screen flex-col gap-3 bg-white800 px-4 dark:bg-black300'
       onClick={(e) => e.stopPropagation()}
     >
-      <div className='mb-2 flex justify-between px-2 py-4'>
+      <div className='mb-2 flex justify-between py-5'>
         <Image
           src={theme === 'light' ? themeLight : themeDark}
           height={24}
@@ -56,7 +57,7 @@ const MobileNavBar: FC<MobileNavBarProps> = ({
         <Link
           key={button.label}
           href={button.path}
-          className={`text-small w-full cursor-pointer rounded-lg px-2 py-4 ${
+          className={`text-small rounded-lg p-4 pr-2 ${
             pathname === button.path
               ? 'border-primaryLight bg-primaryDark font-semibold text-white800'
               : 'text-white500 dark:text-white800'
@@ -69,7 +70,7 @@ const MobileNavBar: FC<MobileNavBarProps> = ({
       <a
         href='/James Drysdale CV.pdf'
         download='James Drysdale CV.pdf'
-        className='flex'
+        className='flex p-4 pr-2'
       >
         <Image
           src={theme === 'light' ? downloadLight : downloadDark}

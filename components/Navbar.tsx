@@ -37,7 +37,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <section className='fixed top-0 z-10 flex h-14 w-screen items-center justify-between bg-white800 px-6 dark:bg-black300 md:h-20 md:px-20'>
+      <section className='fixed top-0 z-10 flex h-16 w-screen items-center justify-between bg-white800 px-4 dark:bg-black300'>
         {/* Brand Logo */}
         <div className='logo-background flex h-7 w-7 items-center justify-center rounded-full md:h-9 md:w-9'>
           <p className='font-semibold text-white900'>J</p>
