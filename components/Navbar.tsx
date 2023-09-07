@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 
+import { navbarLinks } from '@/constants';
+import MobileNavBar from './MobileNavBar';
 import {
   menuLight,
   menuDark,
@@ -14,7 +16,6 @@ import {
   themeLight,
   themeDark,
 } from '@/public/icons/navbar-icons';
-import { navbarLinks } from '@/constants';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -79,6 +80,20 @@ const Navbar = () => {
           />
         </div>
       </section>
+      {showMobileNavbar && (
+        <div
+          className='fixed z-40 flex h-screen w-screen justify-center bg-black/30'
+          onClick={() => setShowMobileNavbar(false)}
+        >
+          <MobileNavBar
+            theme={theme}
+            pathname={pathname}
+            currentTheme={currentTheme}
+            setTheme={setTheme}
+            setShowMobileNav={setShowMobileNavbar}
+          />
+        </div>
+      )}
     </nav>
   );
 };
