@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -23,9 +23,21 @@ const Navbar = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setShowMobileNavbar(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <nav>
-      <section className='flex justify-between py-5'>
+      <section className='fixed top-0 z-10 flex h-14 w-screen items-center justify-between bg-white800 px-6 dark:bg-black300 md:h-20 md:px-20'>
         {/* Brand Logo */}
         <div className='logo-background flex h-7 w-7 items-center justify-center rounded-full md:h-9 md:w-9'>
           <p className='font-semibold text-white900'>J</p>

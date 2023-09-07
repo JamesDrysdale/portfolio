@@ -24,11 +24,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${poppins.className} bg-white800 px-6 text-black200 dark:bg-black300 dark:text-white900 md:px-10`}
+        className={`${poppins.className} bg-white800 text-black200 dark:bg-black300 dark:text-white900`}
       >
         <Provider>
           <Navbar />
-          {children}
+          <div className='mx-6 mt-20 md:mx-20'>{children}</div>
         </Provider>
       </body>
     </html>
