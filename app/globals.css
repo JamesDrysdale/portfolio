@@ -60,7 +60,6 @@
 
   .text-small {
     /* mobile defaults */
-    @apply font-normal;
     @apply text-xs;
     @apply leading-loose155;
     /* desktop overrides */
