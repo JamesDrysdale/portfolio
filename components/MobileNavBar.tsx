@@ -1,11 +1,9 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { navbarLinks } from '@/constants';
 import {
-  menuLight,
-  menuDark,
   downloadLight,
   downloadDark,
   themeLight,
@@ -30,7 +28,6 @@ const MobileNavBar: FC<MobileNavBarProps> = ({
   setShowMobileNav,
 }) => {
   return (
-    //   fixed top-0 mx-2 flex h-full w-screen flex-col gap-3 bg-white800 px-4 dark:bg-black300
     <div
       className='fixed top-0 flex h-full w-screen flex-col gap-3 bg-white800 px-4 dark:bg-black300'
       onClick={(e) => e.stopPropagation()}

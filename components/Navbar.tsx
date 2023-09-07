@@ -86,7 +86,7 @@ const Navbar = () => {
             src={theme === 'light' ? themeLight : themeDark}
             height={20}
             width={20}
-            alt='light mode symbol'
+            alt='light and dark mode toggle'
             className='cursor-pointer'
             onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
           />
