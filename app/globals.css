@@ -90,12 +90,6 @@
   }
 }
 
-/* @layer components {
-  .my-button {
-    @apply text-sm;
-    @apply font-thin;
-
-    @apply lg:text-sm;
-    @apply lg:font-normal;
-  }
-} */
+.logo-background {
+  background: conic-gradient(#0252cd, rgba(2, 82, 205, 0.33));
+}
