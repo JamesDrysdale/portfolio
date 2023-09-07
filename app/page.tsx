@@ -1,7 +1,9 @@
+import Navbar from '@/components/Navbar';
+
 export default function Home() {
   return (
     <main>
-      <h1>Homepage</h1>
+      <Navbar />
       <h1>Heading 1</h1>
       <h2>Heading 2</h2>
       <h3>Heading 3</h3>
