@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main>
+    <main className='mt-24'>
       <h1>Heading 1</h1>
       <h2>Heading 2</h2>
       <h3>Heading 3</h3>

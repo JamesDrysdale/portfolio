@@ -1,10 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTheme } from 'next-themes';
 
+import { navbarLinks } from '@/constants';
+import MobileNavBar from './MobileNavBar';
 import {
   menuLight,
   menuDark,
@@ -13,21 +16,35 @@ import {
   themeLight,
   themeDark,
 } from '@/public/icons/navbar-icons';
-import { navbarLinks } from '@/constants';
 
 const Navbar = () => {
   const pathname = usePathname();
   const [showMobileNavbar, setShowMobileNavbar] = useState(false);
+  const { systemTheme, theme, setTheme } = useTheme();
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setShowMobileNavbar(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <nav>
-      <section className='flex justify-between py-5'>
-        {/* Logo */}
+      <section className='fixed top-0 z-10 flex h-16 w-screen items-center justify-between bg-white800 px-4 dark:bg-black300'>
+        {/* Brand Logo */}
         <div className='logo-background flex h-7 w-7 items-center justify-center rounded-full md:h-9 md:w-9'>
-          <p className='font-semibold text-white900 md:text-xl'>J</p>
+          <p className='font-semibold text-white900'>J</p>
         </div>
+        {/* Mobile Menu Icon - shows only on small devices */}
         <Image
-          src={menuLight}
+          src={theme === 'light' ? menuLight : menuDark}
           height={24}
           width={24}
           alt='menu button'
@@ -38,9 +55,9 @@ const Navbar = () => {
           {navbarLinks.map((button) => (
             <Link href={button.path} key={button.label}>
               <p
-                className={`text-sm ${
+                className={`text-small ${
                   pathname === button.path
-                    ? 'font-semibold text-primaryLight'
+                    ? 'font-semibold text-primaryLight dark:text-primaryDark'
                     : 'text-white500 dark:text-white800'
                 }`}
               >
@@ -48,22 +65,47 @@ const Navbar = () => {
               </p>
             </Link>
           ))}
-          {/* Temporary href below so that the link works */}
-          <Link href='/' className='flex'>
-            <Image src={downloadLight} height={20} width={20} alt='download' />
-            <p className='text-sm text-black200 dark:text-white900'>CV</p>
-          </Link>
+          {/* Download CV link */}
+          <a
+            href='/James Drysdale CV.pdf'
+            download='James Drysdale CV.pdf'
+            className='flex'
+          >
+            <Image
+              src={theme === 'light' ? downloadLight : downloadDark}
+              height={20}
+              width={20}
+              alt="download James Drysdale's CV"
+            />
+            <p className='text-small font-normal text-black200 dark:text-white900'>
+              CV
+            </p>
+          </a>
           <div className='h-6 border-l border-white500' />
           <Image
-            src={themeLight}
+            src={theme === 'light' ? themeLight : themeDark}
             height={20}
             width={20}
-            alt='light mode symbol'
+            alt='light and dark mode toggle'
             className='cursor-pointer'
-            onClick={() => {}}
+            onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
           />
         </div>
       </section>
+      {showMobileNavbar && (
+        <div
+          className='fixed z-40 flex h-screen w-screen justify-center bg-black/30'
+          onClick={() => setShowMobileNavbar(false)}
+        >
+          <MobileNavBar
+            theme={theme}
+            pathname={pathname}
+            currentTheme={currentTheme}
+            setTheme={setTheme}
+            setShowMobileNav={setShowMobileNavbar}
+          />
+        </div>
+      )}
     </nav>
   );
 };
