@@ -1,7 +1,10 @@
-import Navbar from '@/components/Navbar';
 import './globals.css';
+
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
+
+import Navbar from '@/components/Navbar';
+import Provider from '@/providers/Provider';
 
 const poppins = Poppins({
   weight: ['400', '600', '700'],
@@ -20,9 +23,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${poppins.className} px-6 md:px-10`}>
-        <Navbar />
-        {children}
+      <body
+        className={`${poppins.className} bg-white800 px-6 text-black200 dark:bg-black300 dark:text-white900 md:px-10`}
+      >
+        <Provider>
+          <Navbar />
+          {children}
+        </Provider>
       </body>
     </html>
   );

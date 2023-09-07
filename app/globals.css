@@ -5,8 +5,6 @@
 @layer base {
   h1 {
     /* mobile defaults */
-    @apply text-black200;
-    @apply dark:text-white900;
     @apply font-bold;
     @apply text-5xl;
     @apply leading-loose115;
@@ -19,8 +17,6 @@
 
   h2 {
     /* mobile defaults */
-    @apply text-black200;
-    @apply dark:text-white900;
     @apply font-bold;
     @apply text-2xl;
     @apply leading-loose115;
@@ -32,8 +28,6 @@
 
   h3 {
     /* mobile defaults */
-    @apply text-black200;
-    @apply dark:text-white900;
     @apply font-semibold;
     @apply text-xl;
     @apply leading-loose105;
@@ -42,23 +36,11 @@
     @apply lg:text-2xl;
     @apply lg:tracking-tighter;
   }
-
-  p {
-    /* mobile defaults */
-    @apply text-black200;
-    @apply dark:text-white900;
-    @apply font-normal;
-    @apply text-lg;
-    /* desktop overrides */
-    @apply lg:text-xl;
-  }
 }
 
 @layer utilities {
   .text-base {
     /* mobile defaults */
-    @apply text-black200;
-    @apply dark:text-white900;
     @apply font-normal;
     @apply text-xl;
     @apply leading-loose130;
@@ -68,8 +50,6 @@
 
   .text-body {
     /* mobile defaults */
-    @apply text-black200;
-    @apply dark:text-white900;
     @apply font-normal;
     @apply text-base;
     @apply leading-loose155;
@@ -80,13 +60,19 @@
 
   .text-small {
     /* mobile defaults */
-    @apply text-black200;
-    @apply dark:text-white900;
     @apply font-normal;
     @apply text-xs;
     @apply leading-loose155;
     /* desktop overrides */
     @apply lg:text-sm;
+  }
+
+  .text-normal {
+    /* mobile defaults */
+    @apply font-normal;
+    @apply text-lg;
+    /* desktop overrides */
+    @apply lg:text-xl;
   }
 }
 
