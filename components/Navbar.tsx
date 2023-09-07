@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <section className='flex justify-between'>
+      <section className='flex justify-between py-5'>
         {/* Logo */}
         <div className='logo-background flex h-7 w-7 items-center justify-center rounded-full md:h-9 md:w-9'>
           <p className='font-semibold text-white900 md:text-xl'>J</p>
