@@ -86,7 +86,7 @@ const Navbar = () => {
             src={theme === 'light' ? themeLight : themeDark}
             height={20}
             width={20}
-            alt='light and dark mode toggle'
+            alt='light mode toggle'
             className='cursor-pointer'
             onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
           />
@@ -94,7 +94,7 @@ const Navbar = () => {
       </section>
       {showMobileNavbar && (
         <div
-          className='fixed z-40 flex h-screen w-screen justify-center bg-black/30'
+          className='fixed z-40 flex h-screen w-screen justify-center bg-black300'
           onClick={() => setShowMobileNavbar(false)}
         >
           <MobileNavBar
