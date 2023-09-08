@@ -16,12 +16,15 @@ import {
   themeLight,
   themeDark,
 } from '@/public/icons/navbar-icons';
+import ThemedImage from './ThemedImage';
 
 const Navbar = () => {
   const pathname = usePathname();
   const [showMobileNavbar, setShowMobileNavbar] = useState(false);
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  // const currentTheme = theme === 'system' ? systemTheme : theme;
+  console.log('theme: ', theme);
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,6 +33,7 @@ const Navbar = () => {
       }
     };
     window.addEventListener('resize', handleResize);
+    setMounted(true);
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -66,30 +70,35 @@ const Navbar = () => {
             </Link>
           ))}
           {/* Download CV link */}
-          <a
-            href='/James Drysdale CV.pdf'
-            download='James Drysdale CV.pdf'
-            className='flex'
-          >
-            <Image
-              src={theme === 'light' ? downloadLight : downloadDark}
-              height={20}
-              width={20}
-              alt="download James Drysdale's CV"
-            />
-            <p className='text-small font-normal text-black200 dark:text-white900'>
-              CV
-            </p>
-          </a>
-          <div className='h-6 border-l border-white500' />
-          <Image
-            src={theme === 'light' ? themeLight : themeDark}
-            height={20}
-            width={20}
-            alt='light mode toggle'
-            className='cursor-pointer'
-            onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
-          />
+          {mounted && (
+            <>
+              <a
+                href='/James Drysdale CV.pdf'
+                download='James Drysdale CV.pdf'
+                className='flex'
+              >
+                <ThemedImage fileName={'download.svg'} />
+                {/* <Image
+                  src={theme === 'light' ? downloadLight : downloadDark}
+                  height={20}
+                  width={20}
+                  alt="download James Drysdale's CV"
+                /> */}
+                <p className='text-small font-normal text-black200 dark:text-white900'>
+                  CV
+                </p>
+              </a>
+
+              <Image
+                src={theme === 'light' ? themeLight : themeDark}
+                height={24}
+                width={24}
+                alt='light mode toggle'
+                className='cursor-pointer'
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              />
+            </>
+          )}
         </div>
       </section>
       {showMobileNavbar && (
@@ -100,7 +109,7 @@ const Navbar = () => {
           <MobileNavBar
             theme={theme}
             pathname={pathname}
-            currentTheme={currentTheme}
+            currentTheme={theme}
             setTheme={setTheme}
             setShowMobileNav={setShowMobileNavbar}
           />
