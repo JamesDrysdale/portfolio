@@ -6,13 +6,11 @@
   h1 {
     /* mobile defaults */
     @apply font-bold;
-    @apply text-5xl;
-    @apply leading-loose115;
-    @apply tracking-tight;
+    @apply text-3xl;
+    @apply leading-normal;
     /* desktop overrides */
-    @apply lg:text-6xl;
-    @apply lg:leading-loose130;
-    @apply lg:tracking-tighter;
+    @apply xl:text-5xl;
+    @apply leading-loose130;
   }
 
   h2 {
@@ -39,22 +37,22 @@
 }
 
 @layer utilities {
-  .text-base {
+  .text-btn {
     /* mobile defaults */
     @apply font-normal;
     @apply text-xl;
     @apply leading-loose130;
     /* desktop overrides */
-    @apply lg:text-2xl;
+    /* @apply lg:text-2xl; */
   }
 
-  .text-body {
+  .text-hero {
     /* mobile defaults */
     @apply font-normal;
-    @apply text-base;
+    @apply text-[0.7rem];
     @apply leading-loose155;
     /* desktop overrides */
-    @apply lg:text-lg;
+    @apply lg:text-sm;
     @apply lg:leading-loose160;
   }
 
@@ -72,6 +70,23 @@
     @apply text-lg;
     /* desktop overrides */
     @apply lg:text-xl;
+  }
+
+  .text-underline {
+    padding: 30px 0 8px;
+    position: relative;
+  }
+
+  .text-underline::before {
+    content: '';
+    position: absolute;
+    /* left: 7%; */
+    bottom: 14px;
+    width: 100%;
+    height: 0.45em;
+    /* transform: skew(-12deg) translateX(-50%); */
+    background: rgba(238, 111, 87, 0.5);
+    z-index: -1;
   }
 }
 

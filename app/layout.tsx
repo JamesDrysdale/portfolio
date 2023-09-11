@@ -29,7 +29,7 @@ export default function RootLayout({
       >
         <Provider>
           <Navbar />
-          <div className='mx-6 mt-20 md:mx-20'>{children}</div>
+          <div className='mx-4 mt-16 lg:mx-10'>{children}</div>
         </Provider>
       </body>
     </html>
