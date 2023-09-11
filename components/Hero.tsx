@@ -3,7 +3,7 @@
 import Image from 'next/image';
 
 import { heroImg } from '@/public/images';
-import CopyEmail from './copyEmail';
+import CopyEmail from './CopyEmail';
 
 const Hero = () => {
   return (
@@ -26,7 +26,7 @@ const Hero = () => {
         <div className='my-3 flex flex-col justify-start gap-2 md:flex-row'>
           <a
             href='/'
-            className='inline-flex h-9 items-center justify-center rounded-full bg-primaryLight py-3 text-xs font-semibold text-white900 dark:bg-primaryDark md:w-32 md:px-3 lg:py-5 lg:text-sm xl:w-48'
+            className='inline-flex h-9 items-center justify-center rounded-full bg-primaryLight py-3 text-xs font-semibold text-white900 dark:bg-primaryDark md:w-36 md:px-3 lg:py-5 lg:text-sm xl:w-48'
           >
             My Work
           </a>

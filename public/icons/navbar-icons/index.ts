@@ -6,6 +6,7 @@ export { default as themeLight } from './theme-light.svg';
 export { default as themeDark } from './theme-dark.svg';
 export { default as closeLight } from './close-light.svg';
 export { default as closeDark } from './close-dark.svg';
+export { default as copy } from './copy.svg';
 
 export const navbarLinks = [
   {
