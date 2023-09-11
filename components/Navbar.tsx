@@ -16,7 +16,7 @@ import {
   themeLight,
   themeDark,
 } from '@/public/icons/navbar-icons';
-import ThemedImage from './ThemedImage';
+// import ThemedImage from './ThemedImage';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -24,7 +24,6 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   // const currentTheme = theme === 'system' ? systemTheme : theme;
-  console.log('theme: ', theme);
 
   useEffect(() => {
     const handleResize = () => {
@@ -49,8 +48,6 @@ const Navbar = () => {
         {/* Mobile Menu Icon - shows only on small devices */}
         <Image
           src={theme === 'light' ? menuLight : menuDark}
-          height={24}
-          width={24}
           alt='menu button'
           className='cursor-pointer md:hidden'
           onClick={() => setShowMobileNavbar((prev) => !prev)}
@@ -77,13 +74,13 @@ const Navbar = () => {
                 download='James Drysdale CV.pdf'
                 className='flex'
               >
-                <ThemedImage fileName={'download.svg'} />
-                {/* <Image
+                {/* <ThemedImage fileName={'download.svg'} /> */}
+                <Image
                   src={theme === 'light' ? downloadLight : downloadDark}
-                  height={20}
-                  width={20}
+                  height={24}
+                  width={24}
                   alt="download James Drysdale's CV"
-                /> */}
+                />
                 <p className='text-small font-normal text-black200 dark:text-white900'>
                   CV
                 </p>

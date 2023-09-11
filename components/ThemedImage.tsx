@@ -5,12 +5,9 @@ function ThemedImage(fileName: string | any) {
   const { resolvedTheme } = useTheme();
   let src;
 
-  console.log('filename:', fileName.fileName);
-
   switch (resolvedTheme) {
     case 'light':
       src = `/icons/navbar-icons/light/${fileName.fileName}`;
-      console.log('src=', src);
       break;
     case 'dark':
       src = `/icons/navbar-icons/dark/${fileName.fileName}`;

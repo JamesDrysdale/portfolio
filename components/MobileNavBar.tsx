@@ -71,8 +71,8 @@ const MobileNavBar: FC<MobileNavBarProps> = ({
       >
         <Image
           src={theme === 'light' ? downloadLight : downloadDark}
-          height={20}
-          width={20}
+          height={24}
+          width={24}
           alt="download James Drysdale's CV"
         />
         <p className='text-small font-normal text-black200 dark:text-white900'>

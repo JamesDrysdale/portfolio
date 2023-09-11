@@ -1,6 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 
 import { heroImg } from '@/public/images';
+import CopyEmail from './copyEmail';
 
 const Hero = () => {
   return (
@@ -27,12 +30,7 @@ const Hero = () => {
           >
             My Work
           </a>
-          <a
-            href='/'
-            className='inline-flex h-9 items-center justify-center rounded-full bg-white500 py-3 text-xs font-semibold text-white900 dark:bg-primaryDark md:w-32 md:px-3 lg:py-5 lg:text-sm xl:w-48'
-          >
-            Contact Me
-          </a>
+          <CopyEmail email={'jamesdrysdale84@gmail.com'} />
         </div>
       </div>
       {/* Image */}
