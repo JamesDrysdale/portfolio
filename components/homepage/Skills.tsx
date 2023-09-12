@@ -5,7 +5,7 @@ import SkillIcon from './SkillIcon';
 
 const Skills = () => {
   return (
-    <section className='flex flex-col justify-center'>
+    <section className='mt-8 flex flex-col justify-center md:mt-12'>
       <div className='m-auto w-[90px]'>
         <h2 className='text-underline mb-5'>Skills</h2>
       </div>
