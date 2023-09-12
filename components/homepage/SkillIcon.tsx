@@ -15,8 +15,10 @@ const SkillIcon: FC<SkillIconProps> = ({ src, text }) => {
       <div
         key={src}
         className={`cursor-pointer rounded-full ${
-          colourIcon ? 'bg-white900 shadow-lg dark:bg-black200' : 'bg-white800'
-        }  p-3.5 dark:bg-black200 lg:p-6`}
+          colourIcon
+            ? 'z-10 bg-white900 shadow-lg dark:bg-black300'
+            : 'bg-white800'
+        }  p-3.5 dark:bg-black300 lg:p-6`}
         onMouseOver={() => setColourIcon(true)}
         onMouseLeave={() => setColourIcon(false)}
       >

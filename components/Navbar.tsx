@@ -52,7 +52,7 @@ const Navbar = () => {
           className='cursor-pointer md:hidden'
           onClick={() => setShowMobileNavbar((prev) => !prev)}
         />
-        <div className='hidden items-center gap-9 md:flex'>
+        <div className='mr-4 hidden items-center gap-9 md:flex'>
           {navbarLinks.map((button) => (
             <Link href={button.path} key={button.label}>
               <p
