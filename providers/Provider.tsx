@@ -7,7 +7,11 @@ type ProviderProps = {
 };
 
 const Provider: React.FC<ProviderProps> = ({ children }) => {
-  return <ThemeProvider attribute='class'>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider attribute='class' enableSystem={false}>
+      {children}
+    </ThemeProvider>
+  );
 };
 
 export default Provider;
