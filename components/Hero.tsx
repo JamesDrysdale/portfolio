@@ -37,7 +37,7 @@ const Hero = () => {
       <div className='self-center'>
         <Image
           src={heroImg}
-          alt='hero image icon'
+          alt='Illustration of James Drysdale, a frontend software developer'
           className='md:max-h-[500px] md:max-w-[500px]'
         />
       </div>
