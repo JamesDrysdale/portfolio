@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section className='mx-auto mt-16 flex w-full max-w-7xl flex-col md:mt-24  md:flex-row md:justify-between  md:px-10'>
       {/* Intro */}
-      <div className='z-20 flex flex-col md:w-[38rem]'>
+      <div className='z-20 mx-5 flex flex-col md:w-[38rem]'>
         <p className='text-small mb-3 font-semibold uppercase tracking-widest text-primaryLight dark:text-primaryDark md:text-xl'>
           Hi, I am James
         </p>

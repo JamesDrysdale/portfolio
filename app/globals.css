@@ -20,7 +20,6 @@
     @apply leading-loose115;
     @apply tracking-tight;
     /* desktop overrides */
-    /* @apply lg:text-3xl; */
     @apply lg:tracking-tighter;
   }
 
@@ -42,8 +41,6 @@
     @apply font-normal;
     @apply text-xl;
     @apply leading-loose130;
-    /* desktop overrides */
-    /* @apply lg:text-2xl; */
   }
 
   .text-hero {
