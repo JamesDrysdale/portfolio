@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <section className='fixed top-0 z-10 flex h-16 w-screen items-center justify-between bg-white800 px-4 dark:bg-black300'>
+      <section className='fixed top-0 z-50 flex h-16 w-screen items-center justify-between bg-white800 px-4 dark:bg-black300'>
         {/* Brand Logo */}
         <div className='logo-background flex h-7 w-7 items-center justify-center rounded-full md:h-9 md:w-9'>
           <p className='font-semibold text-white900'>J</p>
@@ -52,7 +52,7 @@ const Navbar = () => {
           className='cursor-pointer md:hidden'
           onClick={() => setShowMobileNavbar((prev) => !prev)}
         />
-        <div className='hidden items-center gap-9 md:flex'>
+        <div className='mr-4 hidden items-center gap-9 md:flex'>
           {navbarLinks.map((button) => (
             <Link href={button.path} key={button.label}>
               <p

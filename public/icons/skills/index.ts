@@ -1,5 +1,5 @@
 export { default as css } from './css.svg';
-export { default as express } from './express.svg';
+export { default as express } from './ex.svg';
 export { default as git } from './git.svg';
 export { default as github } from './github.svg';
 export { default as html } from './html.svg';

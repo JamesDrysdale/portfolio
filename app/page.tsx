@@ -3,7 +3,7 @@ import Skills from '@/components/homepage/Skills';
 
 export default function Home() {
   return (
-    <main className='mt-24'>
+    <main>
       <Hero />
       <Skills />
     </main>

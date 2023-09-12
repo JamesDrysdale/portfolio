@@ -30,7 +30,7 @@ export const navbarLinks = [
   },
 ];
 
-export const mySkillsArray = [
+export const skillsArray = [
   { src: css, text: 'CSS' },
   { src: express, text: 'Express' },
   { src: git, text: 'Git' },

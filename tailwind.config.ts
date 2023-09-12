@@ -13,6 +13,7 @@ const config: Config = {
         primaryLight: '#0252CD',
         primaryDark: '#428DFF',
         secondary: '#FFBE62',
+        black100: '#4f4f4f',
         black200: '#151E2C',
         black300: '#192333',
         black400: '#778295',
