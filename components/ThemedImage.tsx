@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 
-function ThemedImage(fileName: string | any) {
+function ThemedImage(fileName: { fileName: any }) {
   const { resolvedTheme } = useTheme();
   let src;
 
